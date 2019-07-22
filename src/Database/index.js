@@ -74,6 +74,7 @@ export default class Database {
 
       return ops.concat([['create', record]])
     }, [])
+    console.log(operations)
     await this.adapter.batch(operations)
 
     const sortedOperations: { collection: Collection<*>, operations: CollectionChangeSet<*> }[] = []
